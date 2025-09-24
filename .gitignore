@@ -1,0 +1,21 @@
+﻿# Envs & caches
+.venv/
+venv/
+.conda/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
+.vscode/
+.env
+
+# Artifacts (no versionar)
+models/trained_models/
+models/model_pipelines/
+data/processed/
+data/production/
+mlruns/
+
+# Archivos temporales
+*.tmp
+*.log
