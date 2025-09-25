@@ -1,21 +1,61 @@
-﻿# Envs & caches
+﻿# ─────────────────────────────
+# Entornos y cachés
+# ─────────────────────────────
 .venv/
 venv/
 .conda/
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.python-version
+.mypy_cache/
+.pytest_cache/
+.cache/
 .DS_Store
+Thumbs.db
 .vscode/
 .env
+.env.*
 
-# Artifacts (no versionar)
-models/trained_models/
-models/model_pipelines/
+# ─────────────────────────────
+# Config local / secretos
+# ─────────────────────────────
+config/secrets.yaml
+config/*secrets*.yml
+config/*secrets*.yaml
+config/parameters.local.yaml
+
+# ─────────────────────────────
+# Datos y artefactos
+# (dejamos .gitkeep para conservar la carpeta vacía)
+# ─────────────────────────────
 data/processed/
 data/production/
-mlruns/
+data/raw/validated/
+data/raw/DEBUG_*.html
+data/raw/*.parquet
+data/odds/*.csv        # CSVs fuente locales de cuotas
+data/raw/odds.csv      # dataset unificado generado
+data/raw/matches.csv   # dataset generado (si se requiere versionar, comentar esta línea)
 
-# Archivos temporales
-*.tmp
+models/trained_models/
+models/model_pipelines/
+mlruns/
+wandb/
+
+# ─────────────────────────────
+# Logs / temporales
+# ─────────────────────────────
 *.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ─────────────────────────────
+# Notebooks: checkpoints ya arriba; los .ipynb sí van al repo
+# ─────────────────────────────
