@@ -33,6 +33,7 @@ config/parameters.local.yaml
 # (dejamos .gitkeep para conservar la carpeta vacía)
 # ─────────────────────────────
 data/processed/
+!data/processed/.gitkeep
 data/production/
 data/raw/validated/
 data/raw/validated/.gitkeep
@@ -43,6 +44,7 @@ data/raw/odds.csv      # dataset unificado generado
 data/raw/matches.csv   # dataset generado (si se requiere versionar, comentar esta línea)
 
 models/trained_models/
+!models/trained_models/*.json
 models/model_pipelines/
 mlruns/
 wandb/

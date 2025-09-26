@@ -1,0 +1,22 @@
+{
+  "model": "xgb",
+  "params": {
+    "max_depth": 6,
+    "learning_rate": 0.03,
+    "n_estimators": 1200,
+    "subsample": 0.8,
+    "colsample_bytree": 0.7,
+    "min_child_weight": 5
+  },
+  "calibration": "isotonic",
+  "valid": {
+    "log_loss": 0.954271440367012,
+    "brier": 0.18838262994685565,
+    "accuracy": 0.5763157894736842
+  },
+  "test": {
+    "log_loss": 0.999487393169126,
+    "brier": 0.19854950442255928,
+    "accuracy": 0.5447368421052632
+  }
+}

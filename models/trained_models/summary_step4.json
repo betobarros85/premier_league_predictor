@@ -1,0 +1,23 @@
+{
+  "ranking": [
+    {
+      "model": "xgb",
+      "calibration": "isotonic",
+      "classes": [
+        "A",
+        "D",
+        "H"
+      ],
+      "valid": {
+        "log_loss": 0.961534067729406,
+        "brier": 0.1897566815654448,
+        "accuracy": 0.5605263157894737
+      },
+      "test": {
+        "log_loss": 0.9993800316536564,
+        "brier": 0.1981513444701514,
+        "accuracy": 0.5236842105263158
+      }
+    }
+  ]
+}
