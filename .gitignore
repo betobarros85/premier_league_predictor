@@ -35,6 +35,7 @@ config/parameters.local.yaml
 data/processed/
 data/production/
 data/raw/validated/
+data/raw/validated/.gitkeep
 data/raw/DEBUG_*.html
 data/raw/*.parquet
 data/odds/*.csv        # CSVs fuente locales de cuotas

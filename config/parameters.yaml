@@ -1,0 +1,50 @@
+project:
+  competition: "Premier League"
+  timezone: "Europe/London"
+
+data:
+  odds_source: "local_csv"    # apisports | local_csv
+  paths:
+    odds_dir: "data/odds"
+    raw_dir: "data/raw"
+
+  # Splits (igual que definimos)
+  seasons:
+    train: ["2018-2019","2019-2020","2020-2021","2021-2022","2022-2023"]
+    valid: ["2023-2024"]
+    test:  ["2024-2025"]
+    prod:  ["2025-2026"]
+
+  # NUEVO: selecciona la fuente de cada tipo de dato
+  matches_source: "fbref"      # fbref | (opcional: football_data si algún día lo habilitas)
+  odds_source: "apisports"     # apisports | local_csv
+
+  # Parámetros por fuente (referenciales)
+  sources:
+    fbref:
+      league_id: 9
+      base_url: "https://fbref.com"  # para referencia/documentación
+    apisports:
+      league_id: 39
+      base_url: "https://v3.football.api-sports.io"
+    local_csv:
+      glob: "data/odds/*.csv"  # si usas CSVs locales de odds
+
+features:
+  rolling_windows: [3,5,8]
+  elo:
+    k: 20
+    home_advantage: 60
+    regress_to_mean: 1500
+
+betting:
+  overround_neutralization: "proportional"
+
+production:
+  bookmakers_priority: ["Pinnacle", "Bet365", "bwin"]  # se usará si la fuente provee varios books
+
+output:
+  validated_dir: "data/raw/validated"
+
+# Ruta al archivo con claves (no versionarlo)
+secrets: "config/secrets.yaml"
